@@ -1,0 +1,40 @@
+<div *ngIf="profile">
+  <div class="card card-default">
+    <div class="card-heading">
+      {{profile.name}}
+      <small>({{profile.login}})</small>
+      <span *ngIf="profile.company"> , Works at {{profile.company}}</span>
+      {{profile.location}}
+    </div>
+    <div class="-body">
+      <div class="row">
+        <div class="col-sm-3">
+          <img src="{{profile.avatar_url}}" class="img-circle img-responsive" alt="">
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+          <li class="list-group-item" *ngIf="profile.hireable">Available for hire</li>
+          <li class="list-group-item" *ngIf="profile.blog">
+            <a href="emailto:{{profile.blog}}"></a>
+          </li>
+          <li class="list-group-item" *ngIf="profile.email">
+            <a href="{{profile.email}}"></a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <div>
+          <p>
+            
+              <span class="label label-default">{{profile.followers}}followers</span>
+              <span class="label label-default">{{profile.followings}}following</span>
+              <span class="label label-default">{{profile.public_gists}}gists</span><span class="label label-default">{{profile.public_repos}}repos</span>
+          </p>
+          <p><a href="{{profile.html_urk}}"></a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
