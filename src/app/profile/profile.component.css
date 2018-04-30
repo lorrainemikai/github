@@ -1,0 +1,17 @@
+.form{
+    padding-top: 50px;
+}
+.style{
+    font-family: 'Shadows Into Light', cursive;
+font-size: 2em;
+
+}
+.panel-body{
+    font-family: 'Skranji', cursive;
+        font-size: large;
+}
+.lit{
+    font-family: 'Montserrat', sans-serif;
+    background-color:rgb(57, 94, 92);
+    color: mistyrose;
+}

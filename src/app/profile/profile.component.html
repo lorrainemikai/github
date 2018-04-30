@@ -1,15 +1,20 @@
+<form action="" class="form">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="search git users" [(ngModel)]="username"  name="username" (keyup)="findProfile()">
+  </div>
+</form>
 <div *ngIf="profile">
   <div class="card card-default">
     <div class="card-heading">
       {{profile.name}}
-      <small>({{profile.login}})</small>
+      <small class="lit">{{profile.login}}</small>
       <span *ngIf="profile.company"> , Works at {{profile.company}}</span>
       {{profile.location}}
     </div>
-    <div class="-body">
+    <div class="body">
       <div class="row">
         <div class="col-sm-3">
-          <img src="{{profile.avatar_url}}" class="img-circle img-responsive" alt="">
+          <img src="{{profile.avatar_url}}" class="img-rounded-circle" alt="">
         </div>
         <ul class="list-group">
           <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
@@ -25,11 +30,11 @@
       </div>
       <div class="col-sm-4">
         <div>
-          <p>
-            
-              <span class="label label-default">{{profile.followers}}followers</span>
-              <span class="label label-default">{{profile.followings}}following</span>
-              <span class="label label-default">{{profile.public_gists}}gists</span><span class="label label-default">{{profile.public_repos}}repos</span>
+          <p>  
+            <span class="badge badge-primary">{{profile.followers}}followers</span>
+              <span class="badge badge-warning">{{profile.followings}}following</span>
+              <span class=" badge badge-danger">{{profile.public_gists}}gists</span>
+              <span class="badge badge-primary">{{profile.public_repos}}repos</span>
           </p>
           <p><a href="{{profile.html_url}}" class="btn btn-warning btn-lg">view page on github</a></p>
           <div class="panel panel-default">
@@ -37,7 +42,7 @@
               <h3 class="panel-title">Repos</h3>
               <div class="panel-body" *ngFor="let repo of repos">
                 <p>
-                  {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-lg btn-danger">view this project on github</a>
+                  {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-md btn-danger style">view this project on github</a>
                   
                 </p>
                 <p>{{repo.description}}</p>
