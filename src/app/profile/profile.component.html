@@ -31,7 +31,17 @@
               <span class="label label-default">{{profile.followings}}following</span>
               <span class="label label-default">{{profile.public_gists}}gists</span><span class="label label-default">{{profile.public_repos}}repos</span>
           </p>
-          <p><a href="{{profile.html_urk}}"></a></p>
+          <p><a href="{{profile.html_url}}" class="btn btn-warning btn-lg">view page on github</a></p>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Repos</h3>
+              <div class="panel-body" *ngFor="let repo of repos">
+                <p>
+                  
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ import{ProfileService}from '../profile.service'
 })
 export class ProfileComponent implements OnInit {
   private profile:any[];
+  repos :any[];
 
 
   constructor(private ProfileService: ProfileService) {
