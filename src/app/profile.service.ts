@@ -25,4 +25,4 @@ export class ProfileService {
     .map(res=>res.json());
   }
   }
-}
+

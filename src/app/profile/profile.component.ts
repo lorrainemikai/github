@@ -6,8 +6,8 @@ import{ProfileService}from '../profile.service'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  private profile:any[];
-  repos :any[];
+  public profile:any[];
+   public repos :any[];
 
 
   constructor(private ProfileService: ProfileService) {
@@ -15,6 +15,11 @@ export class ProfileComponent implements OnInit {
       console.log(profile);
         this.profile = profile;
     });
+
+    this.ProfileService.getProfileRepos().subscribe(repos=>{
+      console.log(repos);
+      this.repos=repos
+    })
    }
 
   ngOnInit() {
